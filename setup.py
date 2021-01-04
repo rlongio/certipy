@@ -137,7 +137,9 @@ setup(
     # projects.
     extras_require={  # Optional
         "dev": ["check-manifest", "black"],
-        "test": ["pytest", "pytest-cov"],
+        "test": [
+            "pytest==6.2.1" "pytest-cov==2.10.1",
+        ],
     },
     # If there are data files included in your packages that need to be
     # installed, specify them here.
