@@ -2,6 +2,8 @@ import os
 import re
 from abc import ABC, abstractmethod
 
+__all__ = ["Path", "File", "Folder", "Frequency", "Required"]
+
 
 class AutoStorage:
     """Base for implementing descriptors """
@@ -26,6 +28,8 @@ class AutoStorage:
 
 
 class Validated(ABC, AutoStorage):
+    """Base validation class """
+
     def __set__(self, instance, value):
         value = self.validate(instance, value)
         super().__set__(instance, value)

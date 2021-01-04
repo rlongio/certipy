@@ -1,18 +1,12 @@
 import pytest
 
-from src.certipy.descriptors import (
-    Path,
-    File,
-    Folder,
-    Frequency,
-    Required,
-    _is_empty,
-)
+from src.certipy.descriptors import _is_empty
+import src.certipy as descriptor
 
 
 class TestPath:
     class DummyClass:
-        path = Path()
+        path = descriptor.Path()
 
         def __init__(self, path):
             self.path = path
@@ -33,7 +27,7 @@ class TestPath:
 
 class TestFile:
     class DummyClass:
-        path = File()
+        path = descriptor.File()
 
         def __init__(self, file):
             self.path = file
@@ -51,7 +45,7 @@ class TestFile:
 
 class TestFolder:
     class DummyClass:
-        path = Folder()
+        path = descriptor.Folder()
 
         def __init__(self, folder):
             self.path = folder
@@ -69,7 +63,7 @@ class TestFolder:
 
 class TestFrequency:
     class DummyClass:
-        frequency = Frequency()
+        frequency = descriptor.Frequency()
 
         def __init__(self, frequency):
             self.frequency = frequency
@@ -88,7 +82,7 @@ class TestFrequency:
 
 class TestRequired:
     class DummyClass:
-        required = Required()
+        required = descriptor.Required()
 
         def __init__(self, required_value):
             self.required = required_value
